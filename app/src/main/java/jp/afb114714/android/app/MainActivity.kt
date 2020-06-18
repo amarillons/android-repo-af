@@ -1,5 +1,6 @@
 package jp.afb114714.android.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,10 @@ class MainActivity : AppCompatActivity() {
 
         nextScreenButton.setOnClickListener({
             Log.d("777","clicked")
+
+            val intent = Intent(this, SubActivity2::class.java)
+
+            startActivity(intent)
         })
     }
 }

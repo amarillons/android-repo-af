@@ -33,7 +33,6 @@
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:text="三十六歌仙などの一覧"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

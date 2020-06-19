@@ -9,13 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.squareup.picasso.Picasso
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.util.Log
 import okhttp3.*
+import org.json.JSONArray
 import java.io.IOException
+import org.json.JSONObject
 
 class KasenActivity : AppCompatActivity() {
 
@@ -29,7 +27,17 @@ fun fetchKasenData () {
     val response = client.newCall(request).enqueue(object : Callback {
 
         override fun onResponse(call: Call, response: Response) {
-            Log.d("777",response.body()!!.string())
+//            Log.d("777",response.body()!!.string())
+
+            val jsonData = response.body()!!.string()
+            val Jarray = JSONArray(jsonData)
+
+            Log.d("777",Jarray.toString(1))
+//            val Jarray = Jobject.getJSONArray("employees")
+
+//            for (i in 0 until Jarray.length()) {
+//                val `object` = Jarray.getJSONObject(i)
+//            }
         }
 
         override fun onFailure(call: Call, e: IOException) {

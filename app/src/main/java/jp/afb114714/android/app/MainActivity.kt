@@ -21,6 +21,12 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         })
+
+        listButton.setOnClickListener({
+            val intent = Intent(this, KasenActivity::class.java)
+
+            startActivity(intent)
+        })
     }
 }
 

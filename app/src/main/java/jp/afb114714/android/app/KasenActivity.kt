@@ -9,16 +9,46 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.squareup.picasso.Picasso
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.util.Log
+import okhttp3.*
+import java.io.IOException
 
 class KasenActivity : AppCompatActivity() {
 
-    
+fun fetchKasenData () {
+    val client = OkHttpClient().newBuilder()
+        .build()
+    val request = Request.Builder()
+        .url("https://a99820.xsrv.jp/kasen_api.php")
+        .method("GET", null)
+        .build()
+    val response = client.newCall(request).enqueue(object : Callback {
+
+        override fun onResponse(call: Call, response: Response) {
+            Log.d("777",response.body()!!.string())
+        }
+
+        override fun onFailure(call: Call, e: IOException) {
+            e.printStackTrace()
+        }}
+    )
+
+
+//    Log.d("777",response.toString())
+
+}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kasen)
 
         title="三十六歌仙"
+
+         fetchKasenData()
 
         val listView = findViewById(R.id.listView) as ListView
 

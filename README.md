@@ -6,8 +6,8 @@ Android 用の公開？リポジトリ
 - CircleCI
 
 ### 使用ライブラリ
-- OkHttp (https://square.github.io/okhttp/) インターネット接続
-- Picasso (https://square.github.io/picasso/)　画像データ表示
+- OkHttp (https://square.github.io/okhttp/ ) インターネット接続
+- Picasso (https://square.github.io/picasso/ )　画像データ表示
 
 
 ### アプリの動作

@@ -1,5 +1,5 @@
 # android-repo-af
-Android 用の公開？リポジトリ
+Android 用の公開リポジトリ
 
 ### ビルド方法
 - gradle
@@ -12,5 +12,6 @@ Android 用の公開？リポジトリ
 
 ### アプリの動作
 - サーバーから「三十六歌仙の画像と解説」を取得して、表示する。
+- 表示部分のコード（ListView を使う）: [KasenActivity.kt](https://github.com/amarillons/android-repo-af/blob/develop/app/src/main/java/jp/afb114714/android/app/KasenActivity.kt)
 
 <img src="https://user-images.githubusercontent.com/2384963/85187913-58c4d580-b2de-11ea-8154-9d773130f7b5.png" width="350">

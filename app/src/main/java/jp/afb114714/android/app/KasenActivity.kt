@@ -22,11 +22,10 @@ class KasenActivity : AppCompatActivity() {
 //    val p2 = Picture("Android","https://i.pinimg.com/474x/8f/8f/dc/8f8fdc621b4dec14800bfc5fea096dfd.jpg")
 //    val p3 = Picture("iOS","https://i.pinimg.com/474x/f4/a8/a5/f4a8a5fb786d94289e659343d2a7b2ed.jpg")
 //    val p4 = Picture("Swift","https://i.pinimg.com/474x/ef/03/cf/ef03cfcc9b1aced47106ef2b99030065.jpg")
-    val p5 = Picture("三十六歌仙たち","https://i.pinimg.com/474x/3f/32/3a/3f323aef178b260a85f9ab162b31691e.jpg")
+    val p5 = Picture("三十六歌仙たち","https://i.pinimg.com/474x/3f/32/3a/3f323aef178b260a85f9ab162b31691e.jpg",  "")
 
 //    var pictures = mutableListOf<Picture>(p1,p2,p3,p4,p5)
     var pictures = mutableListOf<Picture>(p5)
-
 
     fun fetchKasenData () {
     val client = OkHttpClient().newBuilder()
@@ -50,7 +49,7 @@ class KasenActivity : AppCompatActivity() {
 
                 Log.d("777",item.toString())
 
-                val pic = Picture(item.optString("name"),item.optString("image_url"))
+                val pic = Picture(item.optString("name"),item.optString("image_url"), item.optString("description"))
                 pictures.add(pic)
             }
 
@@ -89,12 +88,14 @@ class KasenActivity : AppCompatActivity() {
 
     }
 
-    class Picture constructor(name: String, url: String) {
+    class Picture constructor(name: String, url: String, description: String) {
         val name: String
         val imageUrl: String
+        val description: String
         init {
             this.name = name
             this.imageUrl = url
+            this.description = description
         }
     }
 
@@ -130,7 +131,9 @@ class KasenActivity : AppCompatActivity() {
 
             val title = rowView.findViewById(R.id.title_text_view) as TextView
             val picture: Picture = getItem(position) as Picture
+            val descriptionView = rowView.findViewById(R.id.sub_text_view) as TextView
             title.text = picture.name
+            descriptionView.text = picture.description
 
             val imageView = rowView.findViewById<ImageView>(R.id.icon)
             // imageView.setBackgroundColor(Color.rgb(100, 100, 50))

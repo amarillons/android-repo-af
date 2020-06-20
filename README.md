@@ -12,3 +12,5 @@ Android 用の公開？リポジトリ
 
 ### アプリの動作
 - サーバーから「三十六歌仙の画像と解説」を取得して、表示する。
+
+<img src="https://user-images.githubusercontent.com/2384963/85187913-58c4d580-b2de-11ea-8154-9d773130f7b5.png" width="350">

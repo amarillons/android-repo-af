@@ -1,4 +1,7 @@
 # android-repo-af
+
+[![CircleCI](https://circleci.com/gh/amarillons/android-repo-af/tree/develop.svg?style=svg)](https://circleci.com/gh/amarillons/android-repo-af/tree/develop)
+
 Android 用の公開リポジトリ
 
 ### ビルド方法
